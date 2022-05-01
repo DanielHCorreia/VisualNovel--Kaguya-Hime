@@ -1,6 +1,6 @@
 <h3>:: Projeto da disciplina Multimídia :: </h3>
  
- Equipe: <p> Almir Menezes (amcj2)
+ Equipe: <p> Almir Menezes (amcj2)<br>
          Daniel Henrique (dhac) <br>
          Matheus Marques (mhtm) <br>
          Murilo Ventura(mcf2) <br>
