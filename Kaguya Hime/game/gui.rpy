@@ -162,10 +162,10 @@ define gui.button_text_font = gui.interface_text_font
 define gui.button_text_size = gui.interface_text_size
 
 ## The color of button text in various states.
-define gui.button_text_idle_color = gui.idle_color
-define gui.button_text_hover_color = gui.hover_color
-define gui.button_text_selected_color = gui.selected_color
-define gui.button_text_insensitive_color = gui.insensitive_color
+define gui.button_text_idle_color = '#800000'
+define gui.button_text_hover_color = '#0000CD'
+define gui.button_text_selected_color = '#FFFF00'
+define gui.button_text_insensitive_color = 'gui.insensitive_color'
 
 ## The horizontal alignment of the button text. (0.0 is left, 0.5 is center, 1.0
 ## is right).

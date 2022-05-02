@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/gui.rpy", line 162: unexpected EOF while parsing
+    12px
+        ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Mon May  2 19:27:43 2022
