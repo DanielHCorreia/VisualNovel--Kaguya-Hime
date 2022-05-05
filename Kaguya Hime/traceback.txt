@@ -1,27 +1,44 @@
 ï»¿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-WindowsError: [Error 2] O sistema não pode encontrar o arquivo especificado: u'C:\\Users\\Daniel\\AppData\\Roaming/RenPy/KaguyaHime-1651526153\\persistent'
+While processing the insensitive_color property of style button_text:
+  File "renpy/common/00start.rpy", line 80, in _init_language
+    renpy.change_language(language)
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: Color string u'gui.insensitive_color' must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "renpy/bootstrap.py", line 331, in bootstrap
     renpy.main.main()
-  File "renpy/main.py", line 665, in main
-    renpy.persistent.update(True)
-  File "renpy/persistent.py", line 395, in update
-    save()
-  File "renpy/persistent.py", line 411, in save
-    renpy.loadsave.location.save_persistent(data)
-  File "renpy/savelocation.py", line 496, in save_persistent
-    l.save_persistent(data)
-  File "renpy/savelocation.py", line 354, in save_persistent
-    self.persistent_mtime = os.path.getmtime(fn)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/genericpath.py", line 62, in getmtime
-WindowsError: [Error 2] O sistema não pode encontrar o arquivo especificado: u'C:\\Users\\Daniel\\AppData\\Roaming/RenPy/KaguyaHime-1651526153\\persistent'
+  File "renpy/main.py", line 662, in main
+    run(restart)
+  File "renpy/main.py", line 78, in run
+    renpy.translation.init_translation()
+  File "renpy/translation/__init__.py", line 561, in init_translation
+    renpy.store._init_language() # @UndefinedVariable
+  File "renpy/common/00start.rpy", line 80, in _init_language
+    renpy.change_language(language)
+  File "renpy/translation/__init__.py", line 650, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 795, in renpy.style.rebuild
+  File "style.pyx", line 788, in renpy.style.build_styles
+  File "style.pyx", line 680, in renpy.style.build_style
+  File "style.pyx", line 709, in renpy.style.build_style
+  File "style.pyx", line 706, in renpy.style.build_style
+  File "gen-static/style_insensitive_functions.pyx", line 540, in style_insensitive_functions.insensitive_color_property
+  File "renpy/color.py", line 165, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string u'gui.insensitive_color' must be 3, 4, 6, or 8 hex digits long.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Kaguya Hime 1.0
-Mon May  2 19:52:46 2022
+Mon May  2 21:30:47 2022
