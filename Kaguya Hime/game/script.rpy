@@ -2,9 +2,17 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
+init python:
+    yene = 0
 define e = Character("Jogo")
+
+
+#style.default.font = "VL Gothic regular.ttf"
+#style.default.language = "eastasian"
+
+
 #Cenários principais
+image introducao = "introducao.png"
 image C1 = "C1.png"
 image C2 = "C2.png"
 image C3 = "C3.png"
@@ -16,6 +24,7 @@ image C8 = "C8.png"
 image C9 = "C9.png"
 image C10 = "C10.png"
 #Cenários com itens destacados
+image C1_Bamboo = "/Imagens com itens destacados/C1_Bamboo.png"
 
 # The game starts here.
 
@@ -25,7 +34,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene C1
+    
     
 
     # This shows a character sprite. A placeholder is used, but you can
@@ -35,11 +44,21 @@ label start:
     
 
     # These display lines of dialogue.
+    scene introducao
     "Olá, vamos contar a história de Kaguya Hime"
     "No decorrer do jogo você vai ter que adivinhar o hiragana correspondente ao item em destaque"
     "Bom jogo!"
     scene C1
     "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
+    scene C1_Bamboo
+    "Escolha o Hiragana correto, Qual o nome da planta em destaque?"
+    menu: 
+        "竹":
+            "Certo"
+        "緑":
+            "Errado"
+        "黄色":
+            "Errado"
     scene C2
     "No dia seguinte, ele encontrou muitas moedas de ouro em uma planta de bambu."
     "Ele e sua esposa cuidaram muito bem da menina. Eles a chamavam de Kaguya Hime."

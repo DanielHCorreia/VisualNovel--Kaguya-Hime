@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 25: expected 'image_name_component' not found.
-    show 
+File "game/script.rpy", line 10: expected 'word' not found.
+    style.default.font = "VL Gothic regular.ttf"
+         ^
+
+File "game/script.rpy", line 11: expected 'word' not found.
+    style.default.language = "eastasian"
          ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu May  5 13:49:03 2022
+Fri May  6 18:55:15 2022
