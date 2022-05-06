@@ -38,7 +38,28 @@ label start:
     "Olá, vamos contar a história de Kaguya Hime"
     "No decorrer do jogo você vai ter que adivinhar o hiragana correspondente ao item em destaque"
     "Bom jogo!"
-
+    scene C1
+    "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
+    scene C2
+    "No dia seguinte, ele encontrou muitas moedas de ouro em uma planta de bambu."
+    "Ele e sua esposa cuidaram muito bem da menina. Eles a chamavam de Kaguya Hime."
+    scene C3
+    "Kaguya Hime cresceu e se tornou uma linda jovem."
+    scene C4
+    "Muitos príncipes queriam se casar com ela, mas Kaguya Hime não queria se casar com ninguém."
+    "Então ela deu a eles uma tarefa muito difícil: trazer a pedra de cristal do peito do Dragão."
+    scene C5
+    "Os príncipes foram em busca da pedra de cristal, eles lutaram muito com o dragão, mas não conseguiram a pedra de cristal."
+    scene C6
+    "Kaguya Hime não estava feliz. Ela sempre olhava para a lua cheia e se sentia triste."
+    scene C7
+    "Um dia Kaguya Hime disse ao cortador de bambu que ela realmente veio da lua e as pessoas da lua logo virão buscá-la."
+    scene C8
+    "O cortador de bambu não queria que Kaguya Hime fosse embora. Ele pediu aos samurais para protegê-la do povo da lua."
+    scene C9
+    "Na noite de lua cheia, o povo da lua veio. Eles levaram Kaguya Hime de volta à lua. Os samurais não podiam fazer nada."
+    scene C10
+    "Kaguya Hime gostou muito do cortador de bambu e das pessoas do mundo. Mas Kaguya Hime pertencia à lua. Ela às vezes volta ao mundo quando é lua cheia."
     # This ends the game.
 
     return
