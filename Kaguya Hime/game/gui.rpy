@@ -23,7 +23,7 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = u'#99ccff'
+define gui.accent_color = '#99ccff'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = u'#888888'
@@ -33,7 +33,7 @@ define gui.idle_color = u'#888888'
 define gui.idle_small_color = u'#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = u'#c1e0ff'
+define gui.hover_color = '#c1ffd1'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -64,7 +64,7 @@ define gui.name_text_font = "DejaVuSans.ttf"
 define gui.interface_text_font = "/fonts/IrishGrover-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 50
+define gui.text_size = 42
 
 ## The size of character names.
 define gui.name_text_size = 45
@@ -129,7 +129,7 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_ypos = 65
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
@@ -187,7 +187,7 @@ define gui.confirm_button_text_xalign = 0.5
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
-define gui.quick_button_text_size = 21
+define gui.quick_button_text_size = 32
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
@@ -202,14 +202,14 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 1185
+define gui.choice_button_width = 800
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 4, 150, 4)
 define gui.choice_button_text_font = gui.text_font
-define gui.choice_button_text_size = gui.text_size
+define gui.choice_button_text_size = gui.text_size + 40
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
+define gui.choice_button_text_idle_color = "#fdfafa"
 define gui.choice_button_text_hover_color = "#0000CD"
 define gui.choice_button_text_insensitive_color = "#444444"
 

@@ -48,22 +48,34 @@ label start:
     "Olá, vamos contar a história de Kaguya Hime"
     "No decorrer do jogo você vai ter que adivinhar o hiragana correspondente ao item em destaque"
     "Bom jogo!"
+
+
+    label capitulo1:
     scene C1
     "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
     scene C1_Bamboo
     "Escolha o Hiragana correto, Qual o nome da planta em destaque?"
     menu: 
-        "竹":
+        "竹": #Bambu
             "Certo"
-        "緑":
+            $yene += 100
+            "Parabéns, você ganhou [yene] Yenes que podem ser usados para desbloquear novas partes da história."
+        "緑": #Verde
             "Errado"
-        "黄色":
+        "黄色": #Amarelo
             "Errado"
+    
+    
+
+
     scene C2
     "No dia seguinte, ele encontrou muitas moedas de ouro em uma planta de bambu."
     "Ele e sua esposa cuidaram muito bem da menina. Eles a chamavam de Kaguya Hime."
     scene C3
     "Kaguya Hime cresceu e se tornou uma linda jovem."
+
+
+    label capitulo2:
     scene C4
     "Muitos príncipes queriam se casar com ela, mas Kaguya Hime não queria se casar com ninguém."
     "Então ela deu a eles uma tarefa muito difícil: trazer a pedra de cristal do peito do Dragão."
@@ -71,6 +83,9 @@ label start:
     "Os príncipes foram em busca da pedra de cristal, eles lutaram muito com o dragão, mas não conseguiram a pedra de cristal."
     scene C6
     "Kaguya Hime não estava feliz. Ela sempre olhava para a lua cheia e se sentia triste."
+
+
+    label capitulo3:
     scene C7
     "Um dia Kaguya Hime disse ao cortador de bambu que ela realmente veio da lua e as pessoas da lua logo virão buscá-la."
     scene C8

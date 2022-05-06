@@ -2,13 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 10: expected 'word' not found.
-    style.default.font = "VL Gothic regular.ttf"
-         ^
+File "game/script.rpy", line 53: expected ':' not found.
+    label capitulo1
+                   ^
 
-File "game/script.rpy", line 11: expected 'word' not found.
-    style.default.language = "eastasian"
-         ^
+File "game/script.rpy", line 78: expected ':' not found.
+    label capitulo2
+                   ^
+
+File "game/script.rpy", line 88: expected ':' not found.
+    label capitulo3
+                   ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri May  6 18:55:15 2022
+Fri May  6 19:44:33 2022
