@@ -2,17 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 53: expected ':' not found.
-    label capitulo1
-                   ^
-
-File "game/script.rpy", line 78: expected ':' not found.
-    label capitulo2
-                   ^
-
-File "game/script.rpy", line 88: expected ':' not found.
-    label capitulo3
-                   ^
+File "game/script.rpy", line 138: reached end of line when expecting ':'.
+    if(yene<200){
+            jump capitulo1
+        }
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri May  6 19:44:33 2022
+Sat May  7 17:30:41 2022

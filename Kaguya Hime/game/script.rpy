@@ -4,11 +4,9 @@
 # name of the character.
 init python:
     yene = 0
+    acertos = 0
+    erros = 0
 define e = Character("Jogo")
-
-
-#style.default.font = "VL Gothic regular.ttf"
-#style.default.language = "eastasian"
 
 
 #Cenários principais
@@ -63,6 +61,17 @@ image C10_Amarelo = "/Imagens com itens destacados/C10_Amarelo.png"
 image C10_Rosa = "/Imagens com itens destacados/C10_Rosa.png"
 image C10_Verde = "/Imagens com itens destacados/C10_Verde.png"
 
+label mensagem_de_acerto:
+            $yene += 100
+            $acertos +=1
+            "Parabéns a resposta está correta, você ganhou mais 100 Yen."
+            "Você está com um total de [yene] Yen"
+            return
+            
+label mensagem_de_erro:
+            "Resposta incorreta"
+            $erros+=1           
+
 # The game starts here.
 
 label start:
@@ -84,7 +93,8 @@ label start:
     play music "audio/JapaneseSoundTrack.mp3"
     scene introducao
     "Olá, vamos contar a história de Kaguya Hime"
-    "No decorrer do jogo você vai ter que adivinhar o hiragana correspondente ao item em destaque"
+    "No decorrer do jogo você vai ter que adivinhar a palavra correspondente ao item em destaque"
+    "Caso acerte, ganhará 100 yen virtuais, que podem ser usados para desbloquear novas partes da história"
     "Bom jogo!"
 
 
@@ -92,22 +102,46 @@ label start:
     scene C1
     "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
     scene C1_Bamboo
-    "Escolha o Hiragana correto, Qual o nome da planta em destaque?"
+    "Escolha a palavra correta. Qual o nome da planta em destaque?"
     menu: 
-        "竹": #Bambu
-            "Certo"
-            $yene += 100
-            "Parabéns, você ganhou [yene] Yenes que podem ser usados para desbloquear novas partes da história."
-        "緑": #Verde
-            "Errado"
-        "黄色": #Amarelo
-            "Errado"
+        "たけ (take)": #Bambu
+            "Bambu = たけ (take)"
+            call mensagem_de_acerto
+        "きいろ (kiiro)": #Amarelo
+            call mensagem_de_erro
+        "みどり (midori)": #Verde
+            call mensagem_de_erro
+    
+    scene C1_Machado
+    "Escolha a palavra correta. Qual o nome da ferramenta em destaque?"
+    menu: 
+        "とり(tori)": #Pássaro
+            call mensagem_de_erro
+        "おの (ono)": #Machado
+            "Machado = おの (ono)"
+            call mensagem_de_acerto
+        "たけ (take)": #Bambu
+            call mensagem_de_erro
+
+    scene C1_Passaro
+    #Faltar usar o comando Zoom para deixar o pássaro em evidência no meio da tela
+    "Escolha a palavra correta. Qual o nome do animal em destaque?"
+    menu: 
+        "とり(tori)": #Pássaro
+            call mensagem_de_acerto
+        "おの (ono)": #Machado 
+            call mensagem_de_erro
+        "たけ (take)": #Bambu
+            call mensagem_de_erro
             
-    
+    #if(yene<200){
+    #    jump capitulo1
+    # }
     
 
-
+    
     scene C2
+    #Zerar quantidade de yen a cada cena
     "No dia seguinte, ele encontrou muitas moedas de ouro em uma planta de bambu."
     "Ele e sua esposa cuidaram muito bem da menina. Eles a chamavam de Kaguya Hime."
     scene C3
