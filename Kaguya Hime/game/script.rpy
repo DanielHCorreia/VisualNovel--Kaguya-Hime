@@ -25,6 +25,43 @@ image C9 = "C9.png"
 image C10 = "C10.png"
 #Cenários com itens destacados
 image C1_Bamboo = "/Imagens com itens destacados/C1_Bamboo.png"
+image C1_Machado = "/Imagens com itens destacados/C1_Machado.png"
+image C1_Passaro = "/Imagens com itens destacados/C1_Passaro.png"
+
+image C2_CorVermelho = "/Imagens com itens destacados/C2_CorVermelho.png"
+image C2_Machado = "/Imagens com itens destacados/C2_Machado.png"
+image C2_MoedasDeOuro = "/Imagens com itens destacados/C2_MoedasDeOuro.png"
+
+image C3_2 = "/Imagens com itens destacados/C3_2.png"
+image C3_Leque = "/Imagens com itens destacados/C3_Leque.png"
+image C3_Passaro = "/Imagens com itens destacados/C3_Passaro.png"
+
+image C4_Azul = "/Imagens com itens destacados/C4_Azul.png"
+image C4_Rosa = "/Imagens com itens destacados/C4_Rosa.png"
+image C4_Vermelho = "/Imagens com itens destacados/C4_Vermelho.png"
+
+image C5_marAzul = "/Imagens com itens destacados/C5_marAzul.png"
+image C5_Relampago = "/Imagens com itens destacados/C5_Relampago.png"
+
+image C6_Leque = "/Imagens com itens destacados/C6_Leque.png"
+image C6_LuaAmarela = "/Imagens com itens destacados/C6_LuaAmarela.png"
+image C6_Vermelho = "/Imagens com itens destacados/C6_Vermelho.png"
+
+image C7_3 = "/Imagens com itens destacados/C7_3.png"
+image C7_Amarelo = "/Imagens com itens destacados/C7_Amarelo.png"
+image C7_Azul = "/Imagens com itens destacados/C7_Azul.png"
+
+image C8_Amarelo = "/Imagens com itens destacados/C8_Amarelo.png"
+image C8_Arco = "/Imagens com itens destacados/C8_Arco.png"
+image C8_Flecha = "/Imagens com itens destacados/C8_Flecha.png"
+
+image C9_Azul = "/Imagens com itens destacados/C9_Azul.png"
+image C9_Cavalo = "/Imagens com itens destacados/C9_Cavalo.png"
+image C9_Nuvem = "/Imagens com itens destacados/C9_Nuvem.png"
+
+image C10_Amarelo = "/Imagens com itens destacados/C10_Amarelo.png"
+image C10_Rosa = "/Imagens com itens destacados/C10_Rosa.png"
+image C10_Verde = "/Imagens com itens destacados/C10_Verde.png"
 
 # The game starts here.
 
@@ -44,6 +81,7 @@ label start:
     
 
     # These display lines of dialogue.
+    play music "audio/JapaneseSoundTrack.mp3"
     scene introducao
     "Olá, vamos contar a história de Kaguya Hime"
     "No decorrer do jogo você vai ter que adivinhar o hiragana correspondente ao item em destaque"
@@ -64,6 +102,7 @@ label start:
             "Errado"
         "黄色": #Amarelo
             "Errado"
+            
     
     
 
