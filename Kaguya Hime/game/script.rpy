@@ -5,9 +5,8 @@ init python:
     yene = 0
     acertos = 0
     erros = 0
-    escolhas = {1: 'とり(tori)', 2: "みどり (midori)", 3: "おの (ono)", 4: "たけ (take)", 5: "あお (ao)",
-               6:"くろ (kuro)", 7:"あか (aka)", 8 :"あかいろ (akairo)", 9: "オレンジいろ(orenjiiro)", 10:"や (ya)" }
-    resposta = 0
+    escolhas = ['とり(tori)', "みどり (midori)", "おの (ono)", "たけ (take)",  "あお (ao)",
+               "くろ (kuro)", "あか (aka)", "あかいろ (akairo)",  "オレンジいろ(orenjiiro)", "や (ya)" ]
 define e = Character("Jogo")
 
 
@@ -66,8 +65,6 @@ image C10_Verde = "/Imagens com itens destacados/C10_Verde.png"
 
 
 
-        
-
 
 label mensagem_de_acerto:
             $yene += 100
@@ -106,15 +103,22 @@ label start:
     "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
     scene C1_Bamboo with dissolve
     "Escolha a palavra correta. Qual o nome da planta em destaque?"
-    $resposta = escolhas.get(2)
+    #$resposta = escolhas.get(2)
     #$teste = escolhas.get(1)
+    #Gerar aleatoriamente as opções incorretas da próxima questão
+    label gerarOpcaoErradaC1:
+    $opcaoErrada1 = renpy.random.choice(escolhas)
+    $opcaoErrada2 = renpy.random.choice(escolhas)
+    if(opcaoErrada1 == 'たけ (take)' or opcaoErrada2== 'たけ (take)'):
+        jump gerarOpcaoErradaC1
+
     menu: 
         "たけ (take)": #Bambu
             "Bambu = たけ (take)"
             call mensagem_de_acerto
-        "[resposta]": #Amarelo
+        "[opcaoErrada1]": #Amarelo
             call mensagem_de_erro
-        "escolhas.get(2)": #Verde
+        "[opcaoErrada2]": #Verde
             call mensagem_de_erro
     
     scene C1_Machado with dissolve
