@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 138: reached end of line when expecting ':'.
-    if(yene<200){
-            jump capitulo1
-        }
+File "game/script.rpy", line 84: expected statement.
+    resposta = random.randint(1, 10)
+             ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat May  7 17:30:41 2022
+Mon May  9 15:48:19 2022
