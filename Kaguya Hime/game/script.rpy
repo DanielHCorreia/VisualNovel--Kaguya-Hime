@@ -13,16 +13,16 @@ init python:
     "あかちゃん (akachan)", "ちち (chichi)", "はは (haha)", "そぼ (sobo)", "おはよう (ohayou)",
     "ありがとう (arigatou)","ばか (baka)"]
 
-    respostasCorretas =['たけ (take)','おの (ono)','とり (tori)', #Respostas do  C1
-    'あかいろ (akairo)','おの (ono)',"こうか (kouka)", #Respostas do  C2.
-    "はうちわ (hauchiwa)", "とり (tori)", #Respostas do C3
-    "あお (ao)", 'あかいろ (akairo)', 'ももいろ (momoiro)', #Respostas do  C4
-    'あお (ao)', "き (ki)", #Respostas do  C5
-    "はうちわ (hauchiwa)", "き (ki)", 'あかいろ (akairo)', #Respostas do  C6
-    "さん (san)", "き (ki)",'あお (ao)',  #Respostas do  C7
-    "き (ki)", "ゆみ(yumi)","や (ya)", #Respostas do  C8
-    'あお (ao)', "うま (uma)", "くも (kumo)", #Respostas do  C9
-    "き (ki)",'ももいろ (momoiro)', "みどり (midori)"] #Respostas do  C10
+    respostasCorretas =['たけ   (take)',' おの    (ono)','  とり   (tori)', #Respostas do  C1
+    'あかいろ (akairo)','  おの   (ono)',"こうか (kouka)", #Respostas do  C2.
+    "はうちわ (hauchiwa)", " とり    (tori)", #Respostas do C3
+    " あお     (ao)", 'あかいろ (akairo)', 'ももいろ (momoiro)', #Respostas do  C4
+    ' あお     (ao)', "    き      (ki)", #Respostas do  C5
+    "はうちわ (hauchiwa)", "    き      (ki)", 'あかいろ (akairo)', #Respostas do  C6
+    " さん    (san)", "    き      (ki)",' あお     (ao)',  #Respostas do  C7
+    "    き      (ki)", "ゆみ   (yumi)","    や       (ya)", #Respostas do  C8
+    ' あお     (ao)', "うま (uma)", "くも    (kumo)", #Respostas do  C9
+    "    き      (ki)",'ももいろ (momoiro)', "みどり (midori)"] #Respostas do  C10
 
     #respostasCorretas =['Bambu = たけ (take)','Machado = おの (ono)','Pássaro = とり (tori)', #Respostas do  C1
     #'Vermelho = あかいろ (akairo)','Machado = おの (ono)',"Moeda = こうか (kouka)", #Respostas do  C2.
@@ -123,7 +123,7 @@ scene C1_Bamboo with dissolve
 label gerarOpcaoErradaC1:
     $opcaoErrada1 = renpy.random.choice(escolhas)
     $opcaoErrada2 = renpy.random.choice(escolhas)
-    if(opcaoErrada1 == 'たけ (take)' or opcaoErrada2== 'たけ (take)'):
+    if(opcaoErrada1 == respostasCorretas[0] or opcaoErrada2== opcaoErrada1):
         jump gerarOpcaoErradaC1
     "passou"
     menu: 
@@ -381,7 +381,7 @@ label gerarOpcaoErradaC1:
             "Azul = あお (ao)" 
             call mensagem_de_acerto
     scene C9_Cavalo with dissolve
-    "Escolha a palavra correta, qual palavra é equivalente a cavalo?"
+    "Escolha a palavra correta, qual palavra é equivalente a : Cavalo?"
     menu: 
         "[respostasCorretas[23]]":
             "Cavalo = うま (uma)" 
@@ -391,7 +391,7 @@ label gerarOpcaoErradaC1:
         "[opcaoErrada1]": 
             call mensagem_de_erro
     scene C9_Nuvem with dissolve
-    "Escolha a palavra correta."
+    "Escolha a palavra correta. qual palavra é equivalente a : Nuvem"
     menu: 
         "[opcaoErrada2]": 
             call mensagem_de_erro
@@ -403,7 +403,7 @@ label gerarOpcaoErradaC1:
     scene C10 with dissolve
     "Kaguya Hime gostou muito do cortador de bambu e das pessoas do mundo. Mas Kaguya Hime pertencia à lua. Ela às vezes volta ao mundo quando é lua cheia."
     scene C10_Amarelo with dissolve
-    "Escolha a palavra correta. Qual o nome da cor em destaque?"
+    "Escolha a palavra correta. Qual o nome da cor da lua em destaque?"
     menu: 
         "[respostasCorretas[25]]":
             "Amarelo = き (ki)" 
