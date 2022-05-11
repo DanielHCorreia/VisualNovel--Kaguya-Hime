@@ -5,13 +5,13 @@ init python:
     yene = 0
     acertos = 0
     erros = 0
-    escolhas =['とり(tori)', "みどり (midori)", "おの (ono)", "たけ (take)",  "あお (ao)",
-    "くろ (kuro)", "あか (aka)", "あかいろ (akairo)",  "オレンジいろ(orenjiiro)",
-    "や (ya)", "すいぶん (suibun)", "かぜ (kaze)", "くるま(kuruma)", "さる (saru)",
-    "いろ (iro)", "せいりょく (seiryoku)", "おと (oto)", "いし (ishi)", "こがね (kogane)",
-    "おうごん (ougon)", "くない (kunai)", "ふえたけ (fuetake)", "じょし (joshi)", "しょうねん (shounen)",
-    "あかちゃん (akachan)", "ちち (chichi)", "はは (haha)", "そぼ (sobo)", "おはよう (ohayou)",
-    "ありがとう (arigatou)","ばか (baka)"]
+    escolhas =['とり(tori)', "みどり (midori)", '  おの   (ono)', 'たけ   (take)',  "あお (ao)",
+    "くろ   (kuro)", "あか   (aka)", "あかいろ (akairo)",  "オレンジいろ(orenjiiro)",
+    "    や       (ya)", "すいぶん (suibun)", "かぜ  (kaze)", "くるま  (kuruma)", "  さる   (saru)",
+    "いろ    (iro)", "せいりょく (seiryoku)", "おと     (oto)", "いし    (ishi)", "こがね (kogane)",
+    "おうごん(ougon)", "くない (kunai)", "ふえたけ (fuetake)", "じょし  (joshi)", "しょうねん  (shounen)",
+    "あかちゃん (akachan)", "ちち (chichi)", "はは   (haha)", "そぼ   (sobo)", "おはよう   (ohayou)",
+    "ありがとう (arigatou)","ばか   (baka)"]
 
     respostasCorretas =['たけ   (take)',' おの    (ono)','  とり   (tori)', #Respostas do  C1
     'あかいろ (akairo)','  おの   (ono)',"こうか (kouka)", #Respostas do  C2.
@@ -96,17 +96,25 @@ label mensagem_de_acerto:
             $acertos +=1
             "Parabéns a resposta está correta, você ganhou mais 100 Yen."
             "Você está com um total de [yene] Yen"
+            $opcaoErrada1 = renpy.random.choice(escolhas)
+            $opcaoErrada2 = renpy.random.choice(escolhas)
             return
             
 label mensagem_de_erro:
             "Resposta incorreta"
             $erros+=1
+            $opcaoErrada1 = renpy.random.choice(escolhas)
+            $opcaoErrada2 = renpy.random.choice(escolhas)
             return           
 
 
 #$resposta = random.randint(1, 10)
 # The game starts here.
 label start:
+#Gerar priemira opções erradas
+$opcaoErrada1 = renpy.random.choice(escolhas)
+$opcaoErrada2 = renpy.random.choice(escolhas)
+
 play music "audio/JapaneseSoundTrack.mp3"
 scene introducao
 "Olá, vamos contar a história de Kaguya Hime"
@@ -115,17 +123,10 @@ scene introducao
 "Bom jogo!"
 
 label capitulo1:
-scene C1 with dissolve
-"Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
-scene C1_Bamboo with dissolve
-"Escolha a palavra correta. Qual o nome da planta em destaque?"
-#Gerar aleatoriamente as opções incorretas da próxima questão
-label gerarOpcaoErradaC1:
-    $opcaoErrada1 = renpy.random.choice(escolhas)
-    $opcaoErrada2 = renpy.random.choice(escolhas)
-    if(opcaoErrada1 == respostasCorretas[0] or opcaoErrada2== opcaoErrada1):
-        jump gerarOpcaoErradaC1
-    "passou"
+    scene C1 with dissolve
+    "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
+    scene C1_Bamboo with dissolve
+    "Escolha a palavra correta. Qual o nome da planta em destaque?"
     menu: 
         "[respostasCorretas[0]]": 
             "Bambu = たけ (take)"
@@ -134,7 +135,6 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada2]": 
             call mensagem_de_erro
-
     scene C1_Machado with dissolve
     "Escolha a palavra correta. Qual o nome da ferramenta em destaque?"
     menu: 
@@ -147,7 +147,6 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
 
     scene C1_Passaro with dissolve
-        #Faltar usar o comando Zoom para deixar o pássaro em evidência no meio da tela
     "Escolha a palavra correta. Qual o nome do animal em destaque?"
     menu: 
         "[respostasCorretas[2]]":
@@ -158,7 +157,6 @@ label gerarOpcaoErradaC1:
         "[opcaoErrada1]": 
             call mensagem_de_erro  
     scene C2 with dissolve
-    #Zerar quantidade de yen a cada cena
     "No dia seguinte, ele encontrou muitas moedas de ouro em uma planta de bambu."
     "Ele e sua esposa cuidaram muito bem da menina. Eles a chamavam de Kaguya Hime."
     scene C2_CorVermelho with dissolve
