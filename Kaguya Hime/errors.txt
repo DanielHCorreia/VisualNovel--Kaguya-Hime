@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 320: end of line expected.
-    "[respostasCorretas[19]]":: 
-                              ^
+File "game/script.rpy", line 152: expected statement.
+    zoom x = 0.2
+           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed May 11 17:49:33 2022
+Wed May 11 18:14:20 2022

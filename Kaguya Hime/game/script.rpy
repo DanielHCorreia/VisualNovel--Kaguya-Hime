@@ -11,7 +11,7 @@ init python:
     "いろ (iro)", "せいりょく (seiryoku)", "おと (oto)", "いし (ishi)", "こがね (kogane)",
     "おうごん (ougon)", "くない (kunai)", "ふえたけ (fuetake)", "じょし (joshi)", "しょうねん (shounen)",
     "あかちゃん (akachan)", "ちち (chichi)", "はは (haha)", "そぼ (sobo)", "おはよう (ohayou)",
-    "ありがとう (arigatou)","ばか (baka)" ]
+    "ありがとう (arigatou)","ばか (baka)"]
 
     respostasCorretas =['たけ (take)','おの (ono)','とり (tori)', #Respostas do  C1
     'あかいろ (akairo)','おの (ono)',"こうか (kouka)", #Respostas do  C2.
@@ -168,12 +168,14 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada1]":  
             call mensagem_de_erro
-        "[respostasCorretas[3]]": 
+        "[respostasCorretas[3]]":
+            'Vermelho = あかいろ (akairo)' 
             call mensagem_de_acerto
     scene C2_Machado with dissolve
     "Escolha a palavra correta. Qual o nome da ferramenta em destaque?"
     menu: 
-        "[respostasCorretas[4]]": 
+        "[respostasCorretas[4]]":
+            "Machado = おの (ono)"
             call mensagem_de_acerto
         "[opcaoErrada1]":  
             call mensagem_de_erro
@@ -184,7 +186,8 @@ label gerarOpcaoErradaC1:
     menu: 
         "[opcaoErrada1]": 
             call mensagem_de_erro
-        "[respostasCorretas[5]]":  
+        "[respostasCorretas[5]]":
+            'Moeda = こうか (kouka)'  
             call mensagem_de_acerto
         "[opcaoErrada2]": 
             call mensagem_de_erro   
@@ -193,7 +196,8 @@ label gerarOpcaoErradaC1:
     scene C3_Leque with dissolve
     "Escolha a palavra correta. Qual o nome do item em destaque?"
     menu: 
-        "[respostasCorretas[6]]": 
+        "[respostasCorretas[6]]":
+            "Leque japonês = はうちわ (hauchiwa)" 
             call mensagem_de_acerto
         "[opcaoErrada2]": 
             call mensagem_de_erro
@@ -206,7 +210,8 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada1]": 
             call mensagem_de_erro
-        "[respostasCorretas[7]]": 
+        "[respostasCorretas[7]]":
+            "Pássaro = とり (tori)" 
             call mensagem_de_acerto     
 
     label capitulo2:
@@ -215,10 +220,11 @@ label gerarOpcaoErradaC1:
     "Então ela deu a eles uma tarefa muito difícil: trazer a pedra de cristal do peito do Dragão."
     scene C4_Azul with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
-    menu: 
+    menu:
         "[opcaoErrada2]": 
             call mensagem_de_erro
-        "[respostasCorretas[8]]":  
+        "[respostasCorretas[8]]":
+            "Azul = あお (ao)"  
             call mensagem_de_acerto
         "[opcaoErrada1]": 
             call mensagem_de_erro
@@ -226,6 +232,7 @@ label gerarOpcaoErradaC1:
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
         "[respostasCorretas[9]]": 
+            'Vermelho = あかいろ (akairo)'
             call mensagem_de_acerto
         "[opcaoErrada1]":  
             call mensagem_de_erro
@@ -239,22 +246,25 @@ label gerarOpcaoErradaC1:
         "[opcaoErrada1]":  
             call mensagem_de_erro
         "[respostasCorretas[10]]":
+            'Rosa = ももいろ (momoiro)'
             call mensagem_de_acerto      
     scene C5 with dissolve
     "Os príncipes foram em busca da pedra de cristal, eles lutaram muito com o dragão, mas não conseguiram a pedra de cristal."
     scene C5_marAzul with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
-    menu: 
+    menu:
         "[opcaoErrada2]": 
                 call mensagem_de_erro
         "[opcaoErrada1]":  
                 call mensagem_de_erro
         "[respostasCorretas[11]]":
+                'Azul = あお (ao)'
                 call mensagem_de_acerto
     scene C5_Relampago with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
-        "[respostasCorretas[12]]": 
+        "[respostasCorretas[12]]":
+            "Amarelo = き (ki)" 
             call mensagem_de_acerto
         "[opcaoErrada1]": 
             call mensagem_de_erro
@@ -269,7 +279,8 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada1]":  
             call mensagem_de_erro
-        "[respostasCorretas[13]]": 
+        "[respostasCorretas[13]]":
+            "Leque japonês =  はうちわ (hauchiwa)" 
             call mensagem_de_acerto
     scene C6_LuaAmarela with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
@@ -278,14 +289,16 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada2]":  
             call mensagem_de_erro
-        "[respostasCorretas[14]]": 
+        "[respostasCorretas[14]]":
+            "Amarelo = き (ki)" 
             call mensagem_de_acerto
     scene C6_Vermelho with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
         "[opcaoErrada1]": 
             call mensagem_de_erro
-        "[respostasCorretas[15]]":  
+        "[respostasCorretas[15]]": 
+            'Vermelho = あかいろ (akairo)' 
             call mensagem_de_acerto
         "[opcaoErrada2]": 
             call mensagem_de_erro
@@ -296,7 +309,8 @@ label gerarOpcaoErradaC1:
     scene C7_3 with dissolve
     "Escolha a palavra correta. Quantas pessoas estão em destaque na imagem?"
     menu: 
-        "[respostasCorretas[16]]": 
+        "[respostasCorretas[16]]":
+            "Três = さん (san)" 
             call mensagem_de_acerto
         "[opcaoErrada1]":  
             call mensagem_de_erro
@@ -309,12 +323,14 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada1]":  
             call mensagem_de_erro
-        "[respostasCorretas[17]]": 
+        "[respostasCorretas[17]]":
+            "Amarelo = き (ki)" 
             call mensagem_de_acerto
     scene C7_Azul with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
-        "[respostasCorretas[18]]": 
+        "[respostasCorretas[18]]":
+            'Azul = あお (ao)' 
             call mensagem_de_acerto
         "[opcaoErrada1]":  
             call mensagem_de_erro
@@ -330,11 +346,13 @@ label gerarOpcaoErradaC1:
         "[opcaoErrada1]":  
             call mensagem_de_erro
         "[respostasCorretas[19]]":
+            "Amarelo = き (ki)"
             call mensagem_de_acerto
     scene C8_Arco with dissolve
     "Escolha a palavra correta. Qual o nome da item em destaque?"
     menu: 
-        "[respostasCorretas[20]]": 
+        "[respostasCorretas[20]]":
+            "Arco = ゆみ(yumi)" 
             call mensagem_de_acerto
         "[opcaoErrada2]":  
             call mensagem_de_erro
@@ -343,7 +361,8 @@ label gerarOpcaoErradaC1:
     scene C8_Flecha with dissolve
     "Escolha a palavra correta. Qual o nome da item em destaque?"
     menu: 
-        "[respostasCorretas[21]]": 
+        "[respostasCorretas[21]]":
+            "Flecha = や (ya)" 
             call mensagem_de_acerto
         "[opcaoErrada2]":  
             call mensagem_de_erro
@@ -358,12 +377,14 @@ label gerarOpcaoErradaC1:
             call mensagem_de_erro
         "[opcaoErrada1]":  
             call mensagem_de_erro
-        "[respostasCorretas[22]]": 
+        "[respostasCorretas[22]]":
+            "Azul = あお (ao)" 
             call mensagem_de_acerto
     scene C9_Cavalo with dissolve
     "Escolha a palavra correta, qual palavra é equivalente a cavalo?"
     menu: 
-        "[respostasCorretas[23]]": 
+        "[respostasCorretas[23]]":
+            "Cavalo = うま (uma)" 
             call mensagem_de_acerto
         "[opcaoErrada2]": 
             call mensagem_de_erro
@@ -374,7 +395,8 @@ label gerarOpcaoErradaC1:
     menu: 
         "[opcaoErrada2]": 
             call mensagem_de_erro
-        "[respostasCorretas[24]]": 
+        "[respostasCorretas[24]]":
+            "Nuvem = くも (kumo)" 
             call mensagem_de_acerto
         "[opcaoErrada1]":
             call mensagem_de_erro
@@ -383,7 +405,8 @@ label gerarOpcaoErradaC1:
     scene C10_Amarelo with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
-        "[respostasCorretas[25]]": 
+        "[respostasCorretas[25]]":
+            "Amarelo = き (ki)" 
             call mensagem_de_acerto
         "[opcaoErrada2]":  
             call mensagem_de_erro
@@ -392,7 +415,8 @@ label gerarOpcaoErradaC1:
     scene C10_Rosa with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
-        "[respostasCorretas[26]]": 
+        "[respostasCorretas[26]]":
+            'Rosa = ももいろ (momoiro)' 
             call mensagem_de_acerto
         "[opcaoErrada2]": 
             call mensagem_de_erro
@@ -401,7 +425,8 @@ label gerarOpcaoErradaC1:
     scene C10_Verde with dissolve
     "Escolha a palavra correta. Qual o nome da cor em destaque?"
     menu: 
-        "[respostasCorretas[27]]": 
+        "[respostasCorretas[27]]":
+            "Verde = みどり (midori)" 
             call mensagem_de_acerto
         "[opcaoErrada1]": 
             call mensagem_de_erro
