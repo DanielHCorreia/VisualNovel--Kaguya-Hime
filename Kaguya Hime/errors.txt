@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 113: expected menuitem
-    [renpy.random.choice(['apple', 'orange', 'plum'])]: 
-    ^
+File "game/script.rpy", line 16: invalid syntax
+    respostasCorretas =
+    
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon May  9 16:51:35 2022
+Wed May 11 17:38:54 2022
