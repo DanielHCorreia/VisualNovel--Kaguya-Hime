@@ -357,8 +357,11 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
-
+    #add gui.main_menu_background
+    add Movie(size=(1920, 1080))
+    on "show" action Play("movie", "/video/Warabeuta.avi", loop=True)
+    #on "hide" action Stop("movie")
+    #on "replaced" action Stop("movie")
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
