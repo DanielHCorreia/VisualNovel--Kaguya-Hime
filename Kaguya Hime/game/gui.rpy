@@ -136,7 +136,7 @@ define gui.dialogue_width = 1116
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
-define gui.dialogue_text_xalign = 0.0
+define gui.dialogue_text_xalign = 0.5
 
 
 ## Buttons #####################################################################
@@ -201,7 +201,6 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## Choice Buttons ##############################################################
 ##
 ## Choice buttons are used in the in-game menus.
-
 define gui.choice_button_width = 800
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
@@ -212,6 +211,7 @@ define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = "#fdfafa"
 define gui.choice_button_text_hover_color = "#0000CD"
 define gui.choice_button_text_insensitive_color = "#444444"
+
 
 
 ## File Slot Buttons ###########################################################

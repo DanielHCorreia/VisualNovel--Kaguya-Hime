@@ -3,10 +3,15 @@
 # name of the character.
 init python:
     yene = 0
+    def texto():
+        if(1==1):
+            ui.textbutton("{color=#FFFFFF} Seus créditos", xpos=50,ypos=50)
+            ui.textbutton("{color=#FFFFFF} ¥ [yene]", xpos=50,ypos=100)
+    config.overlay_functions.append(texto)
     acertos = 0
     erros = 0
     escolhas =['とり(tori)', "みどり (midori)", '  おの   (ono)', 'たけ   (take)',  "あお (ao)",
-    "くろ   (kuro)", "あか   (aka)", "あかいろ (akairo)",  "オレンジいろ(orenjiiro)",
+    "くろ   (kuro)", "あか    (aka)", "あかいろ (akairo)",  "オレンジいろ(orenjiiro)",
     "    や       (ya)", "すいぶん (suibun)", "かぜ  (kaze)", "くるま  (kuruma)", "  さる   (saru)",
     "いろ    (iro)", "せいりょく (seiryoku)", "おと     (oto)", "いし    (ishi)", "こがね (kogane)",
     "おうごん(ougon)", "くない (kunai)", "ふえたけ (fuetake)", "じょし  (joshi)", "しょうねん  (shounen)",
@@ -34,12 +39,8 @@ init python:
     #"Amarelo = き (ki)", "Arco = ゆみ(yumi)","Flecha = や (ya)", #Respostas do  C8
     #'Azul = あお (ao)', "Cavalo = うま (uma)", "Nuvem = くも (kumo)", #Respostas do  C9
     #"Amarelo = き (ki)",'Rosa = ももいろ (momoiro)', "Verde = みどり (midori)"] #Respostas do  C10
-
-
-
-
 #Cenários principais
-label importação_de_imagens:
+label importação_de_imagens_e_video:
     image introducao = "introducao.png"
     image C1 = "C1.png"
     image C2 = "C2.png"
@@ -89,29 +90,35 @@ label importação_de_imagens:
     image C10_Amarelo = "/Imagens com itens destacados/C10_Amarelo.png"
     image C10_Rosa = "/Imagens com itens destacados/C10_Rosa.png"
     image C10_Verde = "/Imagens com itens destacados/C10_Verde.png"
-
+    #image videofinal = Movie(size=(1920,1080), channel = "movie",play="video/kaguyahimetheend.ogv", loop=True)
 
 label mensagem_de_acerto:
             $yene += 100
             $acertos +=1
             "Parabéns a resposta está correta, você ganhou mais 100 Yen."
             "Você está com um total de [yene] Yen"
+            label gerarOpcoesAcerto:
             $opcaoErrada1 = renpy.random.choice(escolhas)
             $opcaoErrada2 = renpy.random.choice(escolhas)
+            if opcaoErrada1 == opcaoErrada2:
+                jump gerarOpcoesAcerto
             return
             
 label mensagem_de_erro:
             "Resposta incorreta"
             $erros+=1
+            #label gerarOpcoesAcerto:
             $opcaoErrada1 = renpy.random.choice(escolhas)
             $opcaoErrada2 = renpy.random.choice(escolhas)
+            if opcaoErrada1 == opcaoErrada2:
+                jump gerarOpcoesErro
             return           
 
 
 #$resposta = random.randint(1, 10)
 # The game starts here.
 label start:
-#Gerar priemira opções erradas
+#Gerar a primeira opção errada
 $opcaoErrada1 = renpy.random.choice(escolhas)
 $opcaoErrada2 = renpy.random.choice(escolhas)
 
@@ -121,8 +128,8 @@ scene introducao
 "No decorrer do jogo você vai ter que adivinhar a palavra correspondente ao item em destaque"
 "Caso acerte, ganhará 100 yen virtuais, que podem ser usados para desbloquear novas partes da história"
 "Bom jogo!"
-
 label capitulo1:
+    #renpy.movie_cutscene("video/kaguyahimetheend.mp4")
     scene C1 with dissolve
     "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
     scene C1_Bamboo with dissolve
@@ -211,6 +218,12 @@ label capitulo1:
         "[respostasCorretas[7]]":
             "Pássaro = とり (tori)" 
             call mensagem_de_acerto     
+    "Para continuar você precisa ter ao menos 600 yen"
+    if yene<600 :
+        "Você tem apenas [yene] yen. Tente responder novamente as perguntas para ir para a próxima fase"
+        jump capitulo1
+    else:
+        "Parabéns, você pode continuar com a história e seus [yene] yen foram zerados"
 
     label capitulo2:
     scene C4 with dissolve
@@ -300,6 +313,11 @@ label capitulo1:
             call mensagem_de_acerto
         "[opcaoErrada2]": 
             call mensagem_de_erro
+    if yene<600 :
+        "Você tem apenas [yene] yen. Tente responder novamente as perguntas para ir para a próxima fase"
+        jump capitulo2
+    else:
+        "Parabéns, você pode continuar com a história e seus [yene] yen foram zerados"
 
     label capitulo3:
     scene C7 with dissolve
@@ -430,5 +448,10 @@ label capitulo1:
             call mensagem_de_erro
         "[opcaoErrada2]": 
             call mensagem_de_erro
+    if yene<600 :
+        "Você tem apenas [yene] yen. Tente responder novamente as perguntas para ir para a próxima fase"
+        jump capitulo3
+    else:
+        "Parabéns, você terminou o jogo, continue praticando :)"
     return
 
