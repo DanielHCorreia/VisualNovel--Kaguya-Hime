@@ -10,9 +10,9 @@ init python:
     config.overlay_functions.append(texto)
     acertos = 0
     erros = 0
-    escolhas =['とり(tori)', "みどり (midori)", '  おの   (ono)', 'たけ   (take)',  "あお (ao)",
-    "くろ   (kuro)", "あか    (aka)", "あかいろ (akairo)",  "オレンジいろ(orenjiiro)",
-    "    や       (ya)", "すいぶん (suibun)", "かぜ  (kaze)", "くるま  (kuruma)", "  さる   (saru)",
+    escolhas =[
+    "くろ   (kuro)", "あか    (aka)",  "オレンジいろ(orenjiiro)",
+    "すいぶん (suibun)", "かぜ  (kaze)", "くるま  (kuruma)", "  さる   (saru)",
     "いろ    (iro)", "せいりょく (seiryoku)", "おと     (oto)", "いし    (ishi)", "こがね (kogane)",
     "おうごん(ougon)", "くない (kunai)", "ふえたけ (fuetake)", "じょし  (joshi)", "しょうねん  (shounen)",
     "あかちゃん (akachan)", "ちち (chichi)", "はは   (haha)", "そぼ   (sobo)", "おはよう   (ohayou)",
