@@ -12,7 +12,7 @@ init python:
     erros = 0
     escolhas =[
     "くろ   (kuro)", "あか    (aka)",  "オレンジいろ(orenjiiro)",
-    "すいぶん (suibun)", "かぜ  (kaze)", "くるま  (kuruma)", "  さる   (saru)",
+    "すいぶん (suibun)", "かぜ    (kaze)", "くるま  (kuruma)", "  さる   (saru)",
     "いろ    (iro)", "せいりょく (seiryoku)", "おと     (oto)", "いし    (ishi)", "こがね (kogane)",
     "おうごん(ougon)", "くない (kunai)", "ふえたけ (fuetake)", "じょし  (joshi)", "しょうねん  (shounen)",
     "あかちゃん (akachan)", "ちち (chichi)", "はは   (haha)", "そぼ   (sobo)", "おはよう   (ohayou)",
@@ -90,7 +90,6 @@ label importação_de_imagens_e_video:
     image C10_Amarelo = "/Imagens com itens destacados/C10_Amarelo.png"
     image C10_Rosa = "/Imagens com itens destacados/C10_Rosa.png"
     image C10_Verde = "/Imagens com itens destacados/C10_Verde.png"
-    #image videofinal = Movie(size=(1920,1080), channel = "movie",play="video/kaguyahimetheend.ogv", loop=True)
 
 label mensagem_de_acerto:
             $yene += 100
@@ -107,7 +106,7 @@ label mensagem_de_acerto:
 label mensagem_de_erro:
             "Resposta incorreta"
             $erros+=1
-            #label gerarOpcoesAcerto:
+            label gerarOpcoesErro:
             $opcaoErrada1 = renpy.random.choice(escolhas)
             $opcaoErrada2 = renpy.random.choice(escolhas)
             if opcaoErrada1 == opcaoErrada2:
@@ -129,7 +128,6 @@ scene introducao
 "Caso acerte, ganhará 100 yen virtuais, que podem ser usados para desbloquear novas partes da história"
 "Bom jogo!"
 label capitulo1:
-    #renpy.movie_cutscene("video/kaguyahimetheend.mp4")
     scene C1 with dissolve
     "Um dia, um velho cortador de bambu encontrou uma linda menina em uma planta de bambu. Ele a levou para casa."
     scene C1_Bamboo with dissolve
@@ -223,7 +221,8 @@ label capitulo1:
         "Você tem apenas [yene] yen. Tente responder novamente as perguntas para ir para a próxima fase"
         jump capitulo1
     else:
-        "Parabéns, você pode continuar com a história e seus [yene] yen foram zerados"
+        "Parabéns, você pode continuar com a história e 600 yen serão descontados dos seus [yene] yen"
+        $yene -= 600 
 
     label capitulo2:
     scene C4 with dissolve
@@ -317,7 +316,8 @@ label capitulo1:
         "Você tem apenas [yene] yen. Tente responder novamente as perguntas para ir para a próxima fase"
         jump capitulo2
     else:
-        "Parabéns, você pode continuar com a história e seus [yene] yen foram zerados"
+        "Parabéns, você pode continuar com a história e 600 yen serão descontados dos seus [yene] yen"
+        $yene -= 600 
 
     label capitulo3:
     scene C7 with dissolve
@@ -453,5 +453,6 @@ label capitulo1:
         jump capitulo3
     else:
         "Parabéns, você terminou o jogo, continue praticando :)"
+        $renpy.movie_cutscene("video/kaguyahimetheend.ogv", loops=0, stop_music=True)
     return
 
